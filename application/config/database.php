@@ -5,35 +5,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 // //dev
-$db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'community',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
-//prod dfdosf
-//  $db['default'] = array(
+// $db['default'] = array(
 // 	'dsn'	=> '',
 // 	'hostname' => 'localhost',
-// 	'username' => 'u676725186_jncod',
-// 	'password' => 'jncode12345',
-// 	'database' => 'u676725186_jncod',
+// 	'username' => 'root',
+// 	'password' => '',
+// 	'database' => 'community',
 // 	'dbdriver' => 'mysqli',
 // 	'dbprefix' => '',
 // 	'pconnect' => FALSE,
@@ -49,3 +26,26 @@ $db['default'] = array(
 // 	'failover' => array(),
 // 	'save_queries' => TRUE
 // );
+
+//prod dfdosf
+ $db['default'] = array(
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'u676725186_commu',
+	'password' => 'commu12345',
+	'database' => 'u676725186_commu',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
