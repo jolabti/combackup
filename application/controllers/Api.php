@@ -1,4 +1,14 @@
 <?php
+/*
+
+      header("Access-Control-Allow-Origin: *");
+      header("Content-Type: application/json; charset=UTF-8");
+      header("Access-Control-Allow-Methods: POST");
+      header("Access-Control-Max-Age: 3600");
+      header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+
+*/
 
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
@@ -11,6 +21,12 @@ class Api extends CI_Controller {
 
     // ================================ Api login ====================================
     public function api_login($username,$password){
+        header("Access-Control-Allow-Origin: *");
+        header("Content-Type: application/json; charset=UTF-8");
+        header("Access-Control-Allow-Methods: POST");
+        header("Access-Control-Max-Age: 3600");
+        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 
         $countUser = $this->Authentication_model->cek_user($username, $password);
         $takeUser = $this->Authentication_model->get_user($username, $password);
@@ -57,7 +73,7 @@ class Api extends CI_Controller {
 
         }
 
-        echo json_encode($data);
+        echo json_encode($data,JSON_FORCE_OBJECT);
 
     }
 
