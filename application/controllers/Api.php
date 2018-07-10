@@ -17,15 +17,24 @@ if (!defined('BASEPATH')) {
 class Api extends CI_Controller {
 
  // ===============================  Aunth Api =======================================
+    public function __construct() {
+       parent::__construct();
+       header("Access-Control-Allow-Origin: *");
+       header("Content-Type: application/json; charset=UTF-8");
+       header("Access-Control-Allow-Methods: POST");
+       header("Access-Control-Max-Age: 3600");
+       header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
+
+    }
 
     // ================================ Api login ====================================
     public function api_login($username,$password){
-        header("Access-Control-Allow-Origin: *");
-        header("Content-Type: application/json; charset=UTF-8");
-        header("Access-Control-Allow-Methods: POST");
-        header("Access-Control-Max-Age: 3600");
-        header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+        // header("Access-Control-Allow-Origin: *");
+        // header("Content-Type: application/json; charset=UTF-8");
+        // header("Access-Control-Allow-Methods: POST");
+        // header("Access-Control-Max-Age: 3600");
+        // header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 
         $countUser = $this->Authentication_model->cek_user($username, $password);
@@ -39,7 +48,7 @@ class Api extends CI_Controller {
             $this->session->set_userdata("sess_logged", "logged");
 
         $data["message"]="Ok";
-        $data["respone"]="200";
+        $data["response"]="200";
         $data["email_resp"]= $this->session->userdata("sess_email");
         $data["id_reps"]= $this->session->userdata("sess_id");
 
@@ -49,7 +58,7 @@ class Api extends CI_Controller {
         	if($username==""||$password==""){
 
         				$data["message"]="Email atau Password Belum ditulis";
-				        $data["respone"]="404";
+				        $data["response"]="404";
 				        $data["email_resp"]= "";
 				        $data["id_reps"]= "";
 
@@ -59,7 +68,7 @@ class Api extends CI_Controller {
         	else if($countUser<1){
 
         				$data["message"]="Anda belum terdaftar";
-				        $data["respone"]="404";
+				        $data["response"]="404";
 				        $data["email_resp"]= "";
 				        $data["id_reps"]= "";
 
@@ -107,7 +116,7 @@ class Api extends CI_Controller {
     	// =================================== Api Get Total User ==========================
     	public function api_get_total_user(){
 
-    		$data="";
+    		    $data="";
             $q= $this->Authentication_model->model_total_user();
 
             if($q==null){
@@ -135,12 +144,12 @@ class Api extends CI_Controller {
             if($q==null){
 
                 $data['message']="Postingan tidak ada";
-                $data['respone']="404";
+                $data['response']="404";
             }
 
             else {
 
-                $data['respone'] ="200";
+                $data['response'] ="200";
                 $data['post'] = $q;
             }
 
@@ -149,7 +158,8 @@ class Api extends CI_Controller {
 
         // ================================ Api Get Register ======================================
 
-        public function api_new_user($email, $password, $nama, $umur, $kota){
+//        public function api_new_user($email, $password, $nama, $umur, $kota){
+        public function api_new_user($email, $password){
 
 
             $getUser = $this->Authentication_model->new_user($email, $password);
@@ -164,7 +174,7 @@ class Api extends CI_Controller {
 
 
                  $data["message"]="Registered.!";
-                 $data["respone"]="200";
+                 $data["response"]="200";
                  $data["email_resp"]= $this->session->userdata("sess_email");
                  $data["confirm_pasword_reps"]=$this->session->userdata("sess_confirm_password");
                  $data["id_reps"]= $this->session->userdata("sess_id");
@@ -196,12 +206,12 @@ class Api extends CI_Controller {
             if($q==null){
 
                 $data['message']="Masukkan komentar anda";
-                $data['respone']="404";
+                $data['response']="404";
             }
 
             else {
 
-                $data['respone'] ="200";
+                $data['response'] ="200";
                 $data['post'] = $q;
             }
 

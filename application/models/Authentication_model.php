@@ -87,7 +87,7 @@ class Authentication_model extends CI_Model {
     }
 
     // ============================== Total Postingan ========================
-    // total postingan 
+    // total postingan
     public function model_total_posting(){
 
         return $this->db->get("posting")->num_rows();
@@ -95,11 +95,11 @@ class Authentication_model extends CI_Model {
 
     // ============================= Registration =============================
     // regist
-    public function new_user($email, $password){
-
+    public function new_user($data){
+            
             $this->db->insert("manulaend",$data);
         }
-    
+
 
 
 // Penutup

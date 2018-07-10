@@ -92,7 +92,7 @@ class Authentication extends CI_Controller {
     //         $this->session->set_userdata("sess_logged", "logged");
 
     //     $data["message"]="Ok";
-    //     $data["respone"]="200";
+    //     $data["response"]="200";
     //     $data["email_resp"]= $this->session->userdata("sess_email");
     //     $data["id_reps"]= $this->session->userdata("sess_id");
 
