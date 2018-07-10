@@ -91,7 +91,7 @@ class Api extends CI_Controller {
      public function api_get_posting(){
 
        	$data="";
-        $q= $this->user_model->get_posting();
+        $q= $this->User_model->get_posting();
 
         if($q==null){
 
