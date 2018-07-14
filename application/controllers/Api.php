@@ -68,7 +68,7 @@ class Api extends CI_Controller {
         	else if($countUser<1){
 
         				$data["message"]="Anda belum terdaftar";
-				        $data["response"]="404";
+				        $data["response"]="200";
 				        $data["email_resp"]= "";
 				        $data["id_reps"]= "";
 
