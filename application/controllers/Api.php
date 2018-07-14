@@ -173,14 +173,17 @@ class Api extends CI_Controller {
                 $cekUser = $this->Authentication_model->cek_api_user_register($email);
                 if($cekUser>0){
 
-                      $data['response']="Email sudah terdaftar";
-                      $data['code']=403;
+                      $data['response']="Failed";
+                      $data['message']="Email sudah terdaftar";
+                      $data['code']=200;
 
                 }
                 else{
                       $this->Authentication_model->new_user($paramDb);
-                      $data['response']="Berhasil masuk database";
+                      $data['response']="Ok";
+                      $data['message']="Berhasil masuk database";
                       $data['code']=200;
+
                 }
 
                 echo json_encode($data);
