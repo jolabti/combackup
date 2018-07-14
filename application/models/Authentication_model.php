@@ -67,6 +67,13 @@ class Authentication_model extends CI_Model {
 
     }
 
+    public function cek_api_user_register($email){
+
+        $this->db->where("email", trim($email));
+        return $this->db->get("user")->num_rows();
+
+    }
+
     // ============================= Get User ================================
     // cek get user
     public function get_user($email, $password){
@@ -96,8 +103,8 @@ class Authentication_model extends CI_Model {
     // ============================= Registration =============================
     // regist
     public function new_user($data){
-            
-            $this->db->insert("manulaend",$data);
+
+            $this->db->insert("user",$data);
         }
 
 
