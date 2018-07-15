@@ -9,6 +9,7 @@ class Authentication_model extends CI_Model {
 
     function __construct() {
         parent::__construct();
+        $this->db->cache_on();
     }
 
     // model valiasi login
