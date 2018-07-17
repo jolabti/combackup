@@ -130,12 +130,12 @@ class Api extends CI_Controller {
             if($q==null){
 
                 $data['message']="Data user tidak ada";
-                $data['response']="404";
+                $data['response']="Failed";
             }
 
             else {
 
-                $data['response'] ="200";
+                $data['response'] ="Ok";
                 $data['post'] = $q;
             }
 
@@ -152,12 +152,12 @@ class Api extends CI_Controller {
             if($q==null){
 
                 $data['message']="Postingan tidak ada";
-                $data['response']="404";
+                $data['response']="Failed";
             }
 
             else {
 
-                $data['response'] ="200";
+                $data['response'] ="Ok";
                 $data['post'] = $q;
             }
 
@@ -209,12 +209,12 @@ class Api extends CI_Controller {
             if($q==null){
 
                 $data['message']="Masukkan komentar anda";
-                $data['response']="404";
+                $data['response']="Failed";
             }
 
             else {
 
-                $data['response'] ="200";
+                $data['response'] ="Ok";
                 $data['post'] = $q;
             }
 
