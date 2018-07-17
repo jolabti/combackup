@@ -112,6 +112,14 @@ class Api extends CI_Controller {
         echo json_encode($data);
     }
 
+    public function api_sample_posting(){
+
+         $printModel['data']= $this->User_model->get_sample_posting();
+
+         echo json_encode($printModel);
+
+    }
+
 
     	// =================================== Api Get Total User ==========================
     	public function api_get_total_user(){

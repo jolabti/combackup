@@ -18,11 +18,18 @@ class User_model extends CI_Model {
     	$this->db->select('*');
         $this->db->from('posting');
         $this->db->join('user', 'user.user_id = posting.id_user');
-						$this->db->order_by("posting.waktu", "desc");
+				 $this->db->order_by("posting.waktu", "desc");
 						// $this->db->where('posting.id_user',1);
 						// $this->db->limit(5);
             $q = $this->db->get();
             return $q->result();
+    }
+
+    public function get_sample_posting(){
+
+          $q = $this->db->get('posting');
+          return $q->result();
+
     }
 
     // ============================ Insert Posting ========================
