@@ -27,7 +27,7 @@ $query_builder = TRUE;
 // 	'save_queries' => TRUE
 // );
 
-//prod  
+//prod
  $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
