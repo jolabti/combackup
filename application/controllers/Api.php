@@ -96,13 +96,13 @@ class Api extends CI_Controller {
         if($q==null){
 
         $data['message']="Database null";
-        $data['response']="404";
+        $data['response']="failed";
 
         }
 
         else {
 
-        	$data['response']  ="200";
+        	$data['response']  ="Ok";
         	$data['posts'] = $q;
 
         }

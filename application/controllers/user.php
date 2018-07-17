@@ -4,13 +4,13 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-class user extends CI_Controller {
+class User extends CI_Controller {
 
 
     public function construct(){
         parent::__Construct();
-        
-        $this->load->model('user_model');
+
+        $this->load->model('User_model');
     }
 
 
@@ -18,7 +18,7 @@ class user extends CI_Controller {
     // test Posting
     public function test_posting(){
 
-        $q= $this->user_model->get_posting();
+        $q= $this->User_model->get_posting();
 
         echo json_encode($q);
     }
@@ -34,7 +34,7 @@ class user extends CI_Controller {
             'posting'   => $posting ,
             'waktu'     => "",
             'id_user'   => $this->session->userdata('nama_session'),
-            'urlgambar' => $gambar 
+            'urlgambar' => $gambar
 
         );
 
@@ -47,7 +47,7 @@ class user extends CI_Controller {
     }
 
     // ================================== Delete Posting ===============================
-    // delete 
+    // delete
     public function delete_posting($id){
 
         $data = array(
@@ -55,9 +55,9 @@ class user extends CI_Controller {
                 "user_id"=>$id
 
                 );
-        
+
         $this->user_model->delete_posting($data);
-        
+
         // echo "Data Berhasil dihapus";
 
     }
@@ -70,7 +70,7 @@ class user extends CI_Controller {
         return $query->num_rows();
     }
 
-  
+
 
 
 
