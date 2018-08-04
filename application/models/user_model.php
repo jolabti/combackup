@@ -10,8 +10,7 @@ class User_model extends CI_Model {
     function __construct() {
         parent::__construct();
         //$this->db->cache_on();
-        $this->db->cache_delete_all();
-
+ 
     }
 
     // ========================== Posting ============================
