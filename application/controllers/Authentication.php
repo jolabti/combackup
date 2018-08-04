@@ -9,7 +9,7 @@ class Authentication extends CI_Controller {
     public function __Construct() {
         parent::__Construct();
         // load to authentication model
-        $this->load->model("authentication_model");
+        $this->load->model("Authentication_model");
     }
 
     // index controller login
@@ -35,7 +35,7 @@ class Authentication extends CI_Controller {
     // fungtion Login
     public function login(){
         $postData = $this->input->post();
-        $validate = $this->authentication_model->validate_login($postData);
+        $validate = $this->Authentication_model->validate_login($postData);
         if ($validate){
             $newdata = array(
                 'email'=> $validate[0]->email,
@@ -61,7 +61,7 @@ class Authentication extends CI_Controller {
         $this->ajax_checking();
 
         $postData = $this->input->post();
-        $update = $this->authentication_model->change_password($postData);
+        $update = $this->Authentication_model->change_password($postData);
         if($update['status'] == 'success')
             // notif
             $this->session->set_flashdata('success', 'Your password has been successfully changed!');
