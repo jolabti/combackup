@@ -39,7 +39,7 @@ class User extends CI_Controller {
         );
 
              // Load To User Model
-             $this->user_model->insert_posting($data);
+             $this->User_model->insert_posting($data);
              $this->load->view('frame/header_view');
              $this->load->view('frame/sidebar_nav_view');
              $this->load->view('user/add_posting', $data);
@@ -56,7 +56,7 @@ class User extends CI_Controller {
 
                 );
 
-        $this->user_model->delete_posting($data);
+        $this->User_model->delete_posting($data);
 
         // echo "Data Berhasil dihapus";
 
