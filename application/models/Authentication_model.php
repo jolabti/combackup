@@ -105,8 +105,15 @@ class Authentication_model extends CI_Model {
     // regist
     public function new_user($data){
 
-            $this->db->insert("user",$data);
-        }
+          $this->db->insert("user",$data);
+
+    }
+
+    public function post_model($data){
+
+          $this->db->insert('posting', $data);
+
+    }
 
 
 

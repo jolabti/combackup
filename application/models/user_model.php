@@ -15,9 +15,17 @@ class User_model extends CI_Model {
     // ========================== Posting ============================
     // Get Posting
     public function get_posting(){
+     /*
+     $this->db->select('*');
+        $this->db->from('komen');
+        $this->db->join('user', 'user.user_id = komen.user_id');
+     */
+
+
     	   $this->db->select('*');
          $this->db->from('posting');
          $this->db->join('user', 'user.user_id = posting.id_user');
+         $this->db->join('komen', 'komen.user_id = posting.id_user');
 				 $this->db->order_by("posting.waktu", "desc");
 						// $this->db->where('posting.id_user',1);
 						// $this->db->limit(5);
@@ -31,12 +39,18 @@ class User_model extends CI_Model {
           return $q->result();
 
     }
+    // ============================ Insert Komentar =======================
+    public function insert_komentar($data=array()){
+        $this->db->insert('komen',$data);
+
+    }
 
     // ============================ Insert Posting ========================
     // Insert Posting
     public function insert_posting($data=array()){
     	$this->db->insert('posting',$data);
     }
+
 
     // =========================== Delete User ============================
     // Delete user
@@ -55,9 +69,6 @@ class User_model extends CI_Model {
                     $this->db->limits(7);
             $q = $this->db->get();
             return $q->result();
-
-
-
 
     }
 
