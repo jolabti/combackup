@@ -24,8 +24,8 @@ class User_model extends CI_Model {
 
     	   $this->db->select('*');
          $this->db->from('posting');
-         $this->db->join('user', 'user.user_id = posting.id_user');
-         $this->db->join('komen', 'komen.user_id = posting.id_user');
+         $this->db->join('user', 'user.user_id = posting.user_id');
+         $this->db->join('komen', 'komen.user_id = posting.user_id');
 				 $this->db->order_by("posting.waktu", "desc");
 						// $this->db->where('posting.id_user',1);
 						// $this->db->limit(5);
