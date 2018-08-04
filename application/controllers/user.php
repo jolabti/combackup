@@ -10,7 +10,8 @@ class User extends CI_Controller {
     public function construct(){
         parent::__Construct();
 
-        $this->load->model('User_model');
+         $this->load->model("User_model");
+
     }
 
 

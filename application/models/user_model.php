@@ -6,12 +6,7 @@ if (!defined('BASEPATH')) {
 }
 
 class User_model extends CI_Model {
-
-    function __construct() {
-        parent::__construct();
-        //$this->db->cache_on();
  
-    }
 
     // ========================== Posting ============================
     // Get Posting
@@ -53,7 +48,8 @@ class User_model extends CI_Model {
     }
 
     public function masukkin_komentar($data=array()){
-      $this->db->insert('komen',$data);
+
+          $this->db->insert('komen',$data);
 
     }
 
