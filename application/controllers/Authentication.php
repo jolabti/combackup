@@ -6,11 +6,11 @@ if (!defined('BASEPATH')) {
 
 class Authentication extends CI_Controller {
 
-    // public function __Construct() {
-    //     parent::__Construct();
-    //     // load to authentication model
-    //     $this->load->model("authentication_model");
-    // }
+    public function __Construct() {
+        parent::__Construct();
+        // load to authentication model
+        $this->load->model("authentication_model");
+    }
 
     // index controller login
     public function index() {
