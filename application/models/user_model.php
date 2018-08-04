@@ -40,7 +40,7 @@ class User_model extends CI_Model {
 
     }
     // ============================ Insert Komentar =======================
-    public function insert_komentar($data=array()){
+    public function insert_komen($data=array()){
         $this->db->insert('komen',$data);
 
     }

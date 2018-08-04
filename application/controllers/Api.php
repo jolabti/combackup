@@ -288,7 +288,7 @@ class Api extends CI_Controller {
 
                 );
 
-             $this->User_model->insert_komentar($data);
+             $this->User_model->insert_komen($data);
 
                 $apikom['message']="Komentar Berhasil";
                 $apikom['status']="ok";
