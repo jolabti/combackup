@@ -16,11 +16,13 @@ if (!defined('BASEPATH')) {
 
 class Api extends CI_Controller {
 
+
+
  // ===============================  Aunth Api =======================================
     public function __construct() {
        parent::__construct();
 
-       $this->load->model("user_model");
+       //$this->load->model("user_model");
        header("Access-Control-Allow-Origin: *");
        header("Content-Type: application/json; charset=UTF-8");
        header("Access-Control-Allow-Methods: POST");
