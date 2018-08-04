@@ -20,7 +20,7 @@ class Api extends CI_Controller {
     public function __construct() {
        parent::__construct();
 
-       $this->load->model("User_model");
+       $this->load->model("user_model");
        header("Access-Control-Allow-Origin: *");
        header("Content-Type: application/json; charset=UTF-8");
        header("Access-Control-Allow-Methods: POST");
