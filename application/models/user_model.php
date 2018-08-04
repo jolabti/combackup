@@ -51,6 +51,11 @@ class User_model extends CI_Model {
     	$this->db->insert('posting',$data);
     }
 
+    public function masukkin_komentar($data=array()){
+      $this->db->insert('komen',$data);
+
+    }
+
 
     // =========================== Delete User ============================
     // Delete user

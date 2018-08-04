@@ -288,11 +288,11 @@ class Api extends CI_Controller {
 
                 );
 
-             $this->User_model->insert_komen($data);
-
-                $apikom['message']="Komentar Berhasil";
-                $apikom['status']="ok";
-                echo json_encode($apikom);
+            //  $this->User_model->masukkin_komentar($data);
+             //
+            //     $apikom['message']= "Komentar Berhasil";
+            //     $apikom['status'] ="ok";
+                echo json_encode($data);
 
 
       }
