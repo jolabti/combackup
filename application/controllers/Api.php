@@ -113,7 +113,47 @@ class Api extends CI_Controller {
         	$data['response']  ="Ok";
         	$data['posts'] = $q;
 
+          // foreach ($q as $val) {
+          //   $data['posts'] = array(
+          //       "post_id" =>$val->post_id,
+          //       "waktu" =>$val->komentar,
+          //       "posting" =>$val->post_id,
+          //
+          //   );
+
+          }
+
+
+
+
+
+        echo json_encode($data);
+    }
+
+     public function api_get_komentar($idPosting){
+
+       	$data="";
+        $q= $this->User_model->get_komentar($idPosting);
+
+        if($q==null){
+
+        $data['message']="Database null";
+        $data['response']="failed";
+
         }
+
+        else {
+
+        	$data['response']  ="Ok";
+        	$data['posts'] = $q;
+
+
+
+          }
+
+
+
+
 
         echo json_encode($data);
     }

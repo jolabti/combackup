@@ -6,7 +6,7 @@ if (!defined('BASEPATH')) {
 }
 
 class User_model extends CI_Model {
- 
+
 
     // ========================== Posting ============================
     // Get Posting
@@ -21,10 +21,32 @@ class User_model extends CI_Model {
     	   $this->db->select('*');
          $this->db->from('posting');
          $this->db->join('user', 'user.user_id = posting.user_id');
-         $this->db->join('komen', 'komen.user_id = posting.user_id');
+        //  $this->db->join('komen', 'komen.user_id = posting.user_id');
+        //  $this->db->join('komen', 'komen.post_id = posting.post_id');
 				 $this->db->order_by("posting.waktu", "desc");
 						// $this->db->where('posting.id_user',1);
 						// $this->db->limit(5);
+            $q = $this->db->get();
+            return $q->result();
+    }
+
+
+    public function get_komentar($idPosting){
+     /*
+     $this->db->select('*');
+        $this->db->from('komen');
+        $this->db->join('user', 'user.user_id = komen.user_id');
+     */
+
+
+         $this->db->select('*');
+         $this->db->from('posting');
+         $this->db->where("posting.post_id",$idPosting);
+         $this->db->join('user', 'user.user_id = posting.user_id');
+         $this->db->join('komen', 'komen.user_id = posting.user_id');
+         $this->db->order_by("posting.waktu", "desc");
+            // $this->db->where('posting.id_user',1);
+            // $this->db->limit(5);
             $q = $this->db->get();
             return $q->result();
     }
