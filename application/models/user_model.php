@@ -96,6 +96,11 @@ class User_model extends CI_Model {
 
     }
 
+    public function insert_detail_komentar($data=array()){
+
+        $this->db->insert('komen',$data);
+    }
+
 
 
 

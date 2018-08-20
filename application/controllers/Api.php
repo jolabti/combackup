@@ -146,16 +146,8 @@ class Api extends CI_Controller {
 
         	$data['response']  ="Ok";
         	$data['posts'] = $q;
-
-
-
           }
-
-
-
-
-
-        echo json_encode($data);
+         echo json_encode($data);
     }
 
     public function api_sample_posting(){
@@ -370,6 +362,31 @@ class Api extends CI_Controller {
 
 
       }
+
+      function api_detail_komentar($iduser,$postid){
+
+        $komentar = $this->input->post("komentar");
+        $data = array(
+
+          "user_id" => $iduser,
+          "komentar" => $komentar ,
+          "waktu" => "" ,
+          "post_id" => $postid
+
+          );
+
+        $this->User_model->insert_detail_komentar($data);
+
+
+        $data['message']= "Berhasil";
+        $data['status']= "ok";
+
+
+
+        echo json_encode($data);
+
+
+    }
 
       public function testglob(){
 
